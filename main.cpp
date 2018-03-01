@@ -1,9 +1,7 @@
 #include <iostream>
-
-using namespace std;
+#include "genetic_algorithm.h"
 
 int main()
 {
-    cout << "Hello World!" << endl;
-    return 0;
+
 }
