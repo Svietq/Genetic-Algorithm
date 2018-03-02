@@ -6,11 +6,16 @@
 namespace ga
 {
 
-template <typename T>
+template <typename T = bool>
 class Goal
 {
     int desired_cost = 0;
-    int calc_cost(const Population<T> & pop);
+    int calc_cost(const Population<T> & pop)
+    {
+        /*placeholder*/
+        return 50;
+    }
+
 public:
     Goal(int icost = 0) : desired_cost{icost} {}
     bool operator()(const Population<T> & pop)

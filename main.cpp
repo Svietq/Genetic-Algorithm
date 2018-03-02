@@ -1,11 +1,21 @@
 #include <iostream>
 #include "genetic_algorithm.h"
 
-using namespace ga::sel;
+using namespace ga;
 
 int main()
 {
-//    ga::sel::Selection<int>::create(ga::sel::Selection<int>::Method::Deterministic, 5);
+    using Population = Population<bool>;
+    using Goal = Goal<bool>;
+    using Mutation = Mutation<bool>;
+    using Crossover = Crossover<bool>;
 
-    Selection<Roulette>{};
+    run_ga(Population{20, 4, 8},
+           fit::fitness<bool>,
+           Goal{50},
+           Selection<Roulette>{},
+           Mutation{50},
+           Crossover{1});
+
+
 }

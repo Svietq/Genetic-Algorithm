@@ -3,12 +3,13 @@
 
 #include "helpers.h"
 #include "population.h"
+#include "fitness.h"
 #include "goal.h"
 #include "selection.h"
+#include "operators.h"
 
 namespace ga
 {
-using namespace helpers;
 
 template <typename P,
           typename F,
@@ -17,15 +18,16 @@ template <typename P,
           typename M,
           typename C
           >
-void run_ga(P pop, F fit, G goal, S sel/*, M mut, C cros*/)
+void run_ga(P pop, F fit, G goal, S sel, M mut, C cros)
 {
-    while(goal(pop))
+    using namespace helpers;
+//    while(goal(pop))
     {
-        print(pop);
+//        print(pop);
         eval_func(pop, fit);
         sel(pop);
-//        mut(pop);
-//        cros(pop);
+        mut(pop);
+        cros(pop);
     }
 }
 

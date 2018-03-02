@@ -7,9 +7,6 @@
 namespace ga
 {
 
-namespace sel
-{
-
 struct Deterministic {};
 struct Roulette {};
 struct Rang_tournament {};
@@ -49,8 +46,6 @@ public:
 
     }
 };
-
-}
 
 }
 
