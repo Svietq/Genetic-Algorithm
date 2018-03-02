@@ -4,6 +4,7 @@
 #include "helpers.h"
 #include "population.h"
 #include "goal.h"
+#include "selection.h"
 
 namespace ga
 {
@@ -16,15 +17,15 @@ template <typename P,
           typename M,
           typename C
           >
-void run_ga(P pop, F fit, G goal, S sel, M mut, C cros)
+void run_ga(P pop, F fit, G goal, S sel/*, M mut, C cros*/)
 {
     while(goal(pop))
     {
         print(pop);
         eval_func(pop, fit);
         sel(pop);
-        mut(pop);
-        cros(pop);
+//        mut(pop);
+//        cros(pop);
     }
 }
 
