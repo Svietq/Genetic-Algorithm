@@ -18,7 +18,7 @@ template <typename T>
 class Selection<Deterministic, T>
 {
 public:
-    Selection(){ std::cout << "Deterministic";}
+    Selection(){ std::cout << "Deterministic\n";}
     void operator ()(const Basic_Population<T> & pop)
     {
 
@@ -29,7 +29,7 @@ template <typename T>
 class Selection<Roulette, T>
 {
 public:
-    Selection(){ std::cout << "Roulette";}
+    Selection(){ std::cout << "Roulette\n";}
     void operator ()(const Basic_Population<T> & pop)
     {
 
@@ -40,7 +40,7 @@ template <typename T>
 class Selection<Rang_tournament, T>
 {
 public:
-    Selection(){ std::cout << "Rang_tournament";}
+    Selection(){ std::cout << "Rang_tournament\n";}
     void operator ()(const Basic_Population<T> & pop)
     {
 

@@ -21,9 +21,9 @@ template <typename P,
 void run_ga(P pop, F fit, G goal, S sel, M mut, C cros)
 {
     using namespace helpers;
-    while(goal(pop))
+    print(pop);
+//    while(goal(pop))
     {
-//        print(pop);
         eval_func(pop, fit);
         sel(pop);
         mut(pop);

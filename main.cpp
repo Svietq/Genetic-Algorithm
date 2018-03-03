@@ -5,7 +5,7 @@ using namespace ga;
 
 int main()
 {
-    run_ga(Population{20, 4, 8},
+    run_ga(Population{15, 3, 10},
            fit::fitness<bool>,
            Goal{50},
            Selection<Roulette>{},
