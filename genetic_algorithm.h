@@ -31,6 +31,6 @@ void run_ga(P pop, F fit, G goal, S sel, M mut, C cros)
     }
 }
 
-}
+} //ga
 
 #endif // GENETIC_ALGORITHM_H

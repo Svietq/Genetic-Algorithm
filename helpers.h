@@ -1,8 +1,10 @@
 #ifndef HELPERS_H
 #define HELPERS_H
 
-#include "population.h"
 #include <iostream>
+#include <random>
+#include <chrono>
+#include <type_traits>
 
 namespace ga
 {
@@ -36,9 +38,35 @@ void print(P & pop)
     }
 }
 
+template<typename T>
+class random_generator {
+    using distribution_type = typename std::conditional<
+            std::is_integral<T>::value,
+            std::uniform_int_distribution<T>,
+            std::uniform_real_distribution<T>
+        >::type;
 
+    int seed = std::chrono::steady_clock::now().time_since_epoch().count();
+    T first{};
+    T second{};
+
+    std::default_random_engine engine{seed};
+    distribution_type distribution{first, second};
+
+public:
+    random_generator(T ifirst, T isecond) : first{ifirst}, second{isecond} {}
+    auto operator()() -> decltype(distribution(engine)) {
+        return distribution(engine);
+    }
+};
+
+template <typename T>
+auto generate(T first, T second) -> decltype(random_generator<T>{first, second}()) {
+    return random_generator<T>{first, second}();
 }
 
-}
+} //helpers
+
+} //ga
 
 #endif // HELPERS_H

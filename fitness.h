@@ -22,8 +22,8 @@ int fitness(const Individual<T> & ind)
     return res;
 }
 
-}
+} //fit
 
-}
+} //ga
 
 #endif // FITNESS_H

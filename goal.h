@@ -26,6 +26,6 @@ public:
 
 using Goal = Basic_Goal<bool>;
 
-}
+} //ga
 
 #endif // GOAL_H

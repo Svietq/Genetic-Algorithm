@@ -35,6 +35,6 @@ public:
 
 using Crossover = Basic_Crossover<bool>;
 
-}
+} //ga
 
 #endif // OPERATORS_H

@@ -47,6 +47,6 @@ public:
     }
 };
 
-}
+} //ga
 
 #endif // SELECTION_H
