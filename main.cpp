@@ -12,4 +12,9 @@ int main()
            Mutation{50},
            Crossover{1});
 
+    for( auto x : Statistics<int>::get().fitness_values)
+    {
+        std::cout << x << " ";
+    }
+
 }

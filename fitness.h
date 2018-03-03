@@ -4,6 +4,7 @@
 #include <numeric>
 #include <functional>
 #include "population.h"
+#include "statistics.h"
 
 namespace ga
 {
@@ -19,6 +20,7 @@ int fitness(const Individual<T> & ind)
     {
         res += std::accumulate(chrom.begin(), chrom.end(), 0);
     }
+    Statistics<int>::get().fitness_values.push_back(res);
     return res;
 }
 
