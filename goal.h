@@ -7,22 +7,24 @@ namespace ga
 {
 
 template <typename T = bool>
-class Goal
+class Basic_Goal
 {
     int desired_cost = 0;
-    int calc_cost(const Population<T> & pop)
+    int calc_cost(const Basic_Population<T> & pop)
     {
         /*placeholder*/
         return 50;
     }
 
 public:
-    Goal(int icost = 0) : desired_cost{icost} {}
-    bool operator()(const Population<T> & pop)
+    Basic_Goal(int icost = 0) : desired_cost{icost} {}
+    bool operator()(const Basic_Population<T> & pop)
     {
         return desired_cost >= calc_cost(pop);
     }
 };
+
+using Goal = Basic_Goal<bool>;
 
 }
 

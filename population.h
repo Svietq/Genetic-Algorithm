@@ -13,15 +13,15 @@ template <typename T = bool>
 using Individual = std::vector< Chromosome<T> >;
 
 template <typename T = bool>
-class Population
+class Basic_Population
 {
     using Cont = std::vector< Individual<T> >;
     using Size = typename Cont::size_type;
     Cont cont;
 public:
-    Population(Size pop_size = 0,
-               Size ind_size = 0,
-               Size chrom_size = 0)
+    Basic_Population(Size pop_size = 0,
+                     Size ind_size = 0,
+                     Size chrom_size = 0)
     {
         cont.resize(pop_size, Individual<T>(ind_size, Chromosome<T>(chrom_size)));
         cont.shrink_to_fit();
@@ -33,8 +33,7 @@ public:
     const typename Cont::iterator cend()   { return cont.cend();   }
 };
 
-
-
+using Population = Basic_Population<bool>;
 
 }
 

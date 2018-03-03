@@ -2,6 +2,7 @@
 #define FITNESS_H
 
 #include <numeric>
+#include <functional>
 #include "population.h"
 
 namespace ga
