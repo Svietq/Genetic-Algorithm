@@ -19,7 +19,7 @@ class Selection<Deterministic, T>
 {
 public:
     Selection(){ std::cout << "Deterministic\n";}
-    void operator ()(const Basic_Population<T> & pop)
+    void operator ()(const Basic_Population<T> & )
     {
 
     }
@@ -30,7 +30,7 @@ class Selection<Roulette, T>
 {
 public:
     Selection(){ std::cout << "Roulette\n";}
-    void operator ()(const Basic_Population<T> & pop)
+    void operator ()(const Basic_Population<T> & )
     {
 
     }
@@ -41,7 +41,7 @@ class Selection<Rang_tournament, T>
 {
 public:
     Selection(){ std::cout << "Rang_tournament\n";}
-    void operator ()(const Basic_Population<T> & pop)
+    void operator ()(const Basic_Population<T> & )
     {
 
     }

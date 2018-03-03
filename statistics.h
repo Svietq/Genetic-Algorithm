@@ -10,17 +10,21 @@ template <typename T>
 class Statistics
 {
     Statistics() {}
-    Statistics(const Statistics&);
-    Statistics& operator=(const Statistics&);
+    Statistics(const Statistics &);
+    Statistics & operator=(const Statistics &);
 
 public:
-    static Statistics& get()
+    static Statistics & get()
     {
         static Statistics instance;
         return instance;
     }
 
     std::vector<T> fitness_values;
+    void next_generation()
+    {
+        fitness_values.clear();
+    }
 };
 
 } //ga
