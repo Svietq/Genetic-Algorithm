@@ -37,6 +37,7 @@ public:
     typename Cont::iterator end()   { return cont.end();   }
     const typename Cont::iterator cbegin() const { return cont.cbegin(); }
     const typename Cont::iterator cend()   const { return cont.cend();   }
+    Size size() const { return cont.size(); }
 };
 
 template<>
