@@ -6,7 +6,7 @@
 namespace ga
 {
 
-template <typename T = bool>
+template <typename T = int>
 class Basic_Mutation
 {
     double rate = 0;
@@ -19,9 +19,9 @@ public:
 
 };
 
-using Mutation = Basic_Mutation<bool>;
+using Mutation = Basic_Mutation<int>;
 
-template <typename T = bool>
+template <typename T = int>
 class Basic_Crossover
 {
     int points = 0;
@@ -33,7 +33,7 @@ public:
     }
 };
 
-using Crossover = Basic_Crossover<bool>;
+using Crossover = Basic_Crossover<int>;
 
 } //ga
 

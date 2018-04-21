@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include "helpers.h"
+#include "statistics.h"
 
 namespace ga
 {
@@ -31,6 +32,7 @@ public:
         cont.resize(pop_size, Individual<T>(ind_size, Chromosome<T>(chrom_size)));
         cont.shrink_to_fit();
         init();
+        Statistics<T>::get().pop_size = pop_size;
     }
 
     typename Cont::iterator begin() { return cont.begin(); }
@@ -38,10 +40,14 @@ public:
     const typename Cont::iterator cbegin() const { return cont.cbegin(); }
     const typename Cont::iterator cend()   const { return cont.cend();   }
     Size size() const { return cont.size(); }
+    void resize(Size n) { cont.resize(n); }
+    Individual<T>& operator[](Size idx){ return cont[idx]; }
+    const Individual<T>& operator[](Size idx) const { return cont[idx]; }
+
 };
 
 template<>
-inline void Basic_Population<bool>::init()
+inline void Basic_Population<int>::init()
 {
     for(auto & ind : cont)
     {
@@ -53,7 +59,7 @@ inline void Basic_Population<bool>::init()
 }
 
 
-using Population = Basic_Population<bool>;
+using Population = Basic_Population<int>;
 
 } //ga
 

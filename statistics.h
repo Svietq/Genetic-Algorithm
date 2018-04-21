@@ -14,6 +14,8 @@ class Statistics
     Statistics & operator=(const Statistics &);
 
 public:
+    T pop_size;
+
     static Statistics & get()
     {
         static Statistics instance;
@@ -25,6 +27,8 @@ public:
     {
         fitness_values.clear();
     }
+
+
 };
 
 } //ga

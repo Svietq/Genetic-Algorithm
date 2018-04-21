@@ -6,9 +6,9 @@ using namespace ga;
 int main()
 {
     run_ga(Population{15, 3, 10},
-           fit::fitness<bool>,
+           fit::fitness<int>,
            Goal{50},
-           Selection<Roulette>{},
+           Selection<Deterministic>{},
            Mutation{50},
            Crossover{1});
 

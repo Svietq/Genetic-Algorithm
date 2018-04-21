@@ -1,4 +1,5 @@
 #include "tst_population.h"
+#include "test_fitness.h"
 
 #include <gtest/gtest.h>
 

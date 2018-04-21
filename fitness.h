@@ -12,8 +12,8 @@ namespace ga
 namespace fit
 {
 
-template <typename T = bool>
-int fitness(const Individual<T> & ind)
+template <typename T = int>
+int sum(const Individual<T> & ind)
 {
     int res = 0;
     for(auto chrom : ind)

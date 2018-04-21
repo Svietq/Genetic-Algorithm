@@ -17,7 +17,6 @@ TEST(Population, Size)
             ASSERT_EQ(chrom.size(), 5) << "Number of bits is not set properly";
         }
     }
-
 }
 
 TEST(Population, Value)

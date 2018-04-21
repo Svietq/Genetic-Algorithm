@@ -7,7 +7,7 @@
 namespace ga
 {
 
-template <typename T = bool>
+template <typename T = int>
 class Basic_Goal
 {
     int desired_cost = 0;
@@ -25,7 +25,7 @@ public:
     }
 };
 
-using Goal = Basic_Goal<bool>;
+using Goal = Basic_Goal<int>;
 
 } //ga
 
