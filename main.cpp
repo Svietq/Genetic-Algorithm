@@ -6,13 +6,13 @@ using namespace ga;
 int main()
 {
     run_ga(Population{15, 3, 10},
-           fit::fitness<int>,
+           fit::sum<int>,
            Goal{50},
            Selection<Deterministic>{},
            Mutation{50},
            Crossover{1});
 
-    for( auto x : Statistics<int>::get().fitness_values)
+    for( auto x : Statistics::get().fitness_values)
     {
         std::cout << x << " ";
     }

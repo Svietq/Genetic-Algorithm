@@ -7,7 +7,7 @@
 template<>
 void Selection<Deterministic, int>::calculate_probabilities()
 {
-    const auto & fitness_values = Statistics<int>::get().fitness_values;
+    const auto & fitness_values = Statistics::get().fitness_values;
     const double sum = std::accumulate(fitness_values.begin(), fitness_values.end(), 0.0);
     const double min = * std::min_element(fitness_values.begin(), fitness_values.end());
     const double den = sum - min;
@@ -21,7 +21,7 @@ void Selection<Deterministic, int>::calculate_probabilities()
 template<>
 void Selection<Deterministic, int>::calculate_copies_and_rests()
 {
-    const int POP_SIZE = Statistics<int>::get().pop_size;
+    const int POP_SIZE = Statistics::get().pop_size;
 
     for(auto probability : probabilities)
     {
@@ -34,7 +34,7 @@ template<>
 void Selection<Deterministic, int>::fill_with_copies(Basic_Population<int> & pop)
 {
     const int POP_MULTIPLICITY = 2;
-    const int POP_SIZE = Statistics<int>::get().pop_size;
+    const int POP_SIZE = Statistics::get().pop_size;
     auto ptr = pop.end();
     pop.resize( POP_SIZE * POP_MULTIPLICITY );
     // - POP_SIZE/POP_MULTIPLICITY;
@@ -51,7 +51,7 @@ template<>
 void Selection<Deterministic, int>::fill_with_rests(Basic_Population<int> & pop)
 {
     const int POP_MULTIPLICITY = 2;
-    const int POP_SIZE = Statistics<int>::get().pop_size;
+    const int POP_SIZE = Statistics::get().pop_size;
     const int free_places = POP_SIZE - std::accumulate(copies.begin(), copies.end(), 0);
     const int LOWEST_VALUE = 0;
 

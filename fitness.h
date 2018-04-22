@@ -20,7 +20,7 @@ int sum(const Individual<T> & ind)
     {
         res += std::accumulate(chrom.begin(), chrom.end(), 0);
     }
-    Statistics<int>::get().fitness_values.push_back(res);
+    Statistics::get().fitness_values.push_back(res);
     return res;
 }
 

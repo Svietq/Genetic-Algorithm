@@ -24,7 +24,7 @@ void run_ga(P pop, F fit, G goal, S sel, M mut, C cros)
     print(pop);
     while(goal(pop))
     {
-        Statistics<int>::get().next_generation();
+        Statistics::get().next_generation();
         eval_func(pop, fit);
         sel(pop);
         mut(pop);

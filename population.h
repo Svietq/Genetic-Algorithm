@@ -32,7 +32,7 @@ public:
         cont.resize(pop_size, Individual<T>(ind_size, Chromosome<T>(chrom_size)));
         cont.shrink_to_fit();
         init();
-        Statistics<T>::get().pop_size = pop_size;
+        Basic_Statistics<T>::get().pop_size = pop_size;
     }
 
     typename Cont::iterator begin() { return cont.begin(); }

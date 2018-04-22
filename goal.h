@@ -13,7 +13,7 @@ class Basic_Goal
     int desired_cost = 0;
     int calc_cost()
     {
-        const auto & fitness_values = Statistics<int>::get().fitness_values;
+        const auto & fitness_values = Basic_Statistics<int>::get().fitness_values;
         return std::accumulate(fitness_values.begin(), fitness_values.end(), 0);
     }
 

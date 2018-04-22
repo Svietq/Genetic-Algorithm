@@ -7,18 +7,18 @@ namespace ga
 {
 
 template <typename T>
-class Statistics
+class Basic_Statistics
 {
-    Statistics() {}
-    Statistics(const Statistics &);
-    Statistics & operator=(const Statistics &);
+    Basic_Statistics() {}
+    Basic_Statistics(const Basic_Statistics &);
+    Basic_Statistics & operator=(const Basic_Statistics &);
 
 public:
     T pop_size;
 
-    static Statistics & get()
+    static Basic_Statistics & get()
     {
-        static Statistics instance;
+        static Basic_Statistics instance;
         return instance;
     }
 
@@ -30,6 +30,8 @@ public:
 
 
 };
+
+using Statistics = Basic_Statistics<int>;
 
 } //ga
 

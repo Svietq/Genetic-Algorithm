@@ -5,9 +5,15 @@
 using namespace testing;
 using namespace ga;
 
-TEST(Population, Size)
+class PopulationTest : public ::testing::Test
 {
-    auto pop = Population{15,3,5};
+protected:
+    Population pop{15,3,5};
+
+};
+
+TEST_F(PopulationTest, CheckPopulationSizes)
+{
     EXPECT_EQ(pop.size(), 15) << "Number of individuals is not set properly";
     for(const auto & ind : pop)
     {
@@ -19,9 +25,8 @@ TEST(Population, Size)
     }
 }
 
-TEST(Population, Value)
+TEST_F(PopulationTest, CheckBitsValues)
 {
-    auto pop = Population{15,3,5};
     for(const auto & ind : pop)
     {
         for(const auto & chrom : ind)
@@ -32,5 +37,4 @@ TEST(Population, Value)
             }
         }
     }
-
 }

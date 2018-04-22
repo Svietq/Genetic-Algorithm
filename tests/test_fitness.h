@@ -5,9 +5,15 @@
 using namespace testing;
 using namespace ga;
 
-TEST(Fitness, sum)
+class FitnessTest : public ::testing::Test
 {
-    auto pop = Population{15,3,5};
+protected:
+    Population pop{15,3,5};
+
+};
+
+TEST_F(FitnessTest, SumWorks)
+{
     for(auto & ind : pop)
     {
         int res = 0;
@@ -17,5 +23,14 @@ TEST(Fitness, sum)
         }
 
         EXPECT_EQ(res, fit::sum(ind)) << "Sum of bits is not calculated properly";
+    }
+}
+
+TEST_F(FitnessTest, IsResultPushedToFitnessValues)
+{
+    for(auto & ind : pop)
+    {
+        const auto result = fit::sum(ind);
+        EXPECT_EQ(result, Statistics::get().fitness_values.back()) << "Result of fitness function has not been pushed to fitness_values vector properly";
     }
 }
