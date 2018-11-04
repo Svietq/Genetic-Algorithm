@@ -60,6 +60,8 @@ Thumbs.db
 *vcxproj.*
 Debug/
 .vs/
+packages/
+*.config
 
 # MinGW generated files
 *.Debug

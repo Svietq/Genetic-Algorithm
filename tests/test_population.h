@@ -1,5 +1,3 @@
-#include <gtest/gtest.h>
-#include <gmock/gmock-matchers.h>
 #include "../genetic_algorithm.h"
 
 using namespace testing;
